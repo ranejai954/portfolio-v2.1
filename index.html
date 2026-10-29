@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JAI RANE | THREAT ANALYST</title>
+<meta name="description" content="Jai Rane — B.Sc. Computer Science student focused on cybersecurity, SOC workflows, VAPT fundamentals, Python security tools, and AI-driven security applications.">
+<meta name="theme-color" content="#010509">
+<title>Jai Rane | Cybersecurity, AI & Digital Defense</title>
 <link rel="icon" type="image/png" href="logo2.png">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Barlow+Condensed:wght@300;400;500;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -211,8 +213,9 @@ nav {
 /* ── SECTION SYSTEM ── */
 section { position:relative; z-index:2; }
 /* Non-video sections still need padding via their own .wrap */
-section:not(.) { padding:90px 0; }
-section:not(.) > .wrap { max-width:1080px; margin:0 auto; padding:0 2rem; }
+section { position:relative; z-index:2; padding:90px 0; scroll-margin-top:54px; }
+section > .wrap { max-width:1080px; margin:0 auto; padding:0 2rem; }
+section.hero { padding-top:120px; }
 
 /* Bleach — zanpakuto release call header format */
 .sec-release {
@@ -628,12 +631,105 @@ footer {
 .hero-readout{animation-delay:.55s} .hero-alerts{animation-delay:.65s} .hero-cta{animation-delay:.75s}
 
 /* ── RESPONSIVE ── */
+.mobile-menu-btn {
+  display:none; align-items:center; justify-content:center; width:38px; height:34px;
+  color:var(--blue); background:var(--card); border:1px solid var(--border);
+  border-radius:2px; cursor:pointer; font-size:1rem;
+}
+.mobile-menu-btn:hover, .mobile-menu-btn:focus-visible { border-color:var(--blue); outline:none; }
+a:focus-visible, button:focus-visible { outline:2px solid var(--cyan); outline-offset:3px; }
 @media(max-width:768px){
-  .nav-links,.nav-ping{display:none}
+  nav { padding:0 1rem; }
+  .nav-id { font-size:0.82rem; }
+  .nav-id .role { display:none; }
+  .nav-ping { display:none; }
+  .mobile-menu-btn { display:inline-flex; }
+  .nav-links { display:none; position:absolute; top:54px; left:0; right:0; padding:0.4rem 1rem 0.8rem; flex-direction:column; background:rgba(1,5,9,0.98); border-bottom:1px solid var(--border); box-shadow:0 12px 24px rgba(0,0,0,0.3); }
+  .nav-links.is-open { display:flex; }
+  .nav-links a { height:auto; line-height:1.4; padding:0.8rem 0.5rem; border-bottom:1px solid rgba(26,100,200,0.1); }
+  .wrap { padding-left:1.1rem; padding-right:1.1rem; }
   .contact-wrap{grid-template-columns:1fr}
   .hero-readout{flex-wrap:wrap}
   .readout-cell{flex-basis:50%;border-bottom:1px solid var(--border)}
+  .proj-grid { grid-template-columns:1fr; }
+  .about-grid { grid-template-columns:1fr; }
+  .sec-case-label { line-height:1.6; letter-spacing:0.08em; }
 }
+@media(prefers-reduced-motion:reduce){
+  html { scroll-behavior:auto; }
+  *, *::before, *::after { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; }
+}
+
+
+/* ── REFINED PORTFOLIO PASS: restrained glow, clear hierarchy, photo + resume ── */
+:root { --blue:#55b5ff; --blue2:#1768b4; --violet:#b29aff; --violet2:#7252c8; --cyan:#79e4ef; --border:rgba(105,160,220,.17); --borderv:rgba(178,154,255,.22); --text:#d8e5f2; --dim:#8a9db3; }
+body { background:radial-gradient(ellipse at 76% 18%,rgba(32,82,140,.13),transparent 36%),var(--bg); }
+body::after { opacity:.48; background:radial-gradient(ellipse at 50% 0%,rgba(70,155,255,.035),transparent 70%),radial-gradient(ellipse at 100% 100%,rgba(150,120,255,.035),transparent 60%); }
+#bgc { opacity:.24; }
+nav { background:rgba(3,8,15,.84); border-bottom-color:rgba(115,160,220,.15); }
+.nav-links a { color:#91a2b6; }
+.nav-links a:hover,.nav-links a.active { color:#a9d9ff; border-bottom-color:#55b5ff; }
+.hero-premium { min-height:100vh; display:flex; align-items:center; padding:116px 0 76px !important; overflow:hidden; }
+.hero-layout { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr); align-items:center; gap:clamp(2rem,6vw,5rem); }
+.hero-copy { min-width:0; }
+.hero-case { border-radius:999px; padding:.48rem .9rem; margin-bottom:1.65rem; background:rgba(11,20,34,.7); border-color:rgba(110,170,230,.18); letter-spacing:.13em; }
+.hero-case .case-id { color:#b5a2ff; }
+.hero-stage { color:#b6a7ff; font-size:.68rem; letter-spacing:.18em; margin-bottom:1.1rem; }
+.hero-stage .stage-num { background:rgba(114,82,200,.78); border-radius:4px; padding:.22rem .48rem; }
+.hero-name { font-size:clamp(4.1rem,8vw,6.7rem); margin-bottom:.85rem; letter-spacing:-.025em; text-shadow:0 0 70px rgba(85,181,255,.13); }
+.hero-name em { color:#eaf5ff; }
+.hero-name .slash { color:#a99aff; }
+.hero-typed { color:#8ce7f0; margin-bottom:1.15rem; font-size:clamp(.82rem,1.5vw,1rem); }
+.hero-bio { max-width:590px; color:#9aacc0; line-height:1.85; margin-bottom:1.55rem; }
+.hero-alerts { margin-bottom:1.65rem; gap:.55rem; }
+.alert-pill { border-radius:999px; padding:.42rem .78rem; font-size:.59rem; letter-spacing:.055em; }
+.ap-blue { background:rgba(60,150,230,.075); border-color:rgba(85,181,255,.2); color:#9bd5ff; }
+.ap-violet { background:rgba(145,115,230,.075); border-color:rgba(178,154,255,.2); color:#c4b5ff; }
+.ap-yellow { background:rgba(230,190,85,.06); border-color:rgba(230,190,85,.18); color:#dfc77e; }
+.ap-red { background:rgba(232,41,58,.06); border-color:rgba(232,41,58,.15); }
+.cta { border-radius:7px; padding:.78rem 1.05rem; font-size:.67rem; letter-spacing:.055em; }
+.cta-solid { background:linear-gradient(135deg,#247cc5,#2457a2); border-color:rgba(105,190,255,.45); box-shadow:0 8px 24px rgba(20,92,160,.15); }
+.cta-solid:hover { background:linear-gradient(135deg,#399ce8,#3269bc); box-shadow:0 10px 28px rgba(26,143,255,.22); }
+.cta-line-v { border-color:rgba(178,154,255,.4); color:#c2b3ff; border-radius:7px; }
+.cta-line-v:hover { background:rgba(178,154,255,.08); box-shadow:0 8px 24px rgba(155,77,255,.12); }
+.cta-resume { color:#d4f7f3; background:rgba(34,170,155,.09); border-color:rgba(100,225,205,.34); }
+.cta-resume:hover { background:rgba(34,170,155,.16); border-color:rgba(100,225,205,.62); transform:translateY(-2px); }
+.cta-ghost { border-radius:7px; color:#a9b8ca; border-color:rgba(130,160,195,.2); }
+.hero-meta { display:flex; flex-wrap:wrap; gap:.65rem 1.15rem; margin-top:1.5rem; color:#748aa3; font-family:var(--mono); font-size:.61rem; letter-spacing:.015em; }
+.hero-meta span { display:inline-flex; align-items:center; gap:.42rem; }
+.hero-meta i { color:#83bfff; }
+.hero-visual { position:relative; min-height:420px; display:flex; align-items:center; justify-content:center; isolation:isolate; }
+.portrait-frame { width:min(100%,350px); position:relative; z-index:2; padding:12px; border:1px solid rgba(115,175,235,.27); border-radius:18px; background:linear-gradient(145deg,rgba(17,31,50,.94),rgba(6,13,24,.93)); box-shadow:0 25px 80px rgba(0,0,0,.36),0 0 65px rgba(60,135,220,.09); transform:rotate(1.2deg); transition:transform .35s ease,border-color .35s ease; }
+.portrait-frame:hover { transform:rotate(0) translateY(-4px); border-color:rgba(130,190,255,.48); }
+.portrait-topline { display:flex; justify-content:space-between; align-items:center; gap:.5rem; padding:.4rem .35rem .75rem; font: .56rem var(--mono); letter-spacing:.09em; color:#7188a4; }
+.portrait-live { color:#8fdcc2; font-size:.52rem; display:flex; align-items:center; gap:.35rem; }
+.portrait-live i,.chip-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:#6ed9ad; box-shadow:0 0 9px rgba(110,217,173,.6); }
+.portrait-image-wrap { height:330px; position:relative; overflow:hidden; border-radius:10px; background:radial-gradient(ellipse at 50% 30%,rgba(74,135,210,.23),transparent 65%),linear-gradient(145deg,#111f32,#070d17); border:1px solid rgba(130,170,220,.12); }
+.portrait-image { width:100%; height:100%; display:block; object-fit:cover; object-position:center 30%; }
+.portrait-fallback { display:none; width:100%; height:100%; align-items:center; justify-content:center; flex-direction:column; gap:.65rem; color:#eaf4ff; font:800 6rem var(--head); letter-spacing:-.06em; background:radial-gradient(circle at 50% 40%,rgba(110,170,255,.15),transparent 45%); }
+.portrait-fallback span { font: .55rem var(--mono); letter-spacing:.18em; color:#90a9c4; }
+.portrait-caption { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:.95rem .3rem .35rem; }
+.portrait-caption strong { display:block; color:#f2f7ff; font:700 1.18rem var(--head); letter-spacing:.08em; }
+.portrait-caption span:not(.portrait-mark) { display:block; margin-top:.25rem; color:#8da2bb; font-size:.77rem; }
+.portrait-mark { width:36px; height:36px; display:grid; place-items:center; border:1px solid rgba(125,180,255,.23); border-radius:10px; color:#9bcfff; background:rgba(60,130,210,.08); }
+.orbit { position:absolute; border:1px solid rgba(95,165,245,.11); border-radius:50%; pointer-events:none; z-index:-1; }
+.orbit-one { width:390px; height:390px; transform:rotate(-24deg) scaleY(.72); }
+.orbit-two { width:470px; height:470px; transform:rotate(35deg) scaleY(.72); border-color:rgba(178,154,255,.1); }
+.visual-chip { position:absolute; z-index:3; padding:.62rem .78rem; border:1px solid rgba(120,165,220,.2); border-radius:8px; background:rgba(7,15,27,.9); box-shadow:0 10px 30px rgba(0,0,0,.2); color:#a7bbd1; font: .54rem var(--mono); letter-spacing:.06em; backdrop-filter:blur(12px); }
+.chip-top { top:12%; right:-1rem; }
+.chip-bottom { bottom:12%; left:-1.2rem; display:flex; align-items:center; gap:.5rem; }
+section:not(.hero) { padding:82px 0; }
+.acard,.proj-card,.xp-item,.cnode { border-radius:10px; }
+.acard { background:rgba(8,17,30,.82); border-color:rgba(110,160,215,.14); }
+.acard:hover { border-color:rgba(85,181,255,.45); box-shadow:0 12px 34px rgba(0,0,0,.14); }
+.sec-release .release-bar { background:#8f83df; }
+.release-tag { color:#a99aff; letter-spacing:.19em; }
+.sec-case-label { color:#8298b1; letter-spacing:.1em; }
+.rule { background:linear-gradient(90deg,rgba(85,181,255,.25),rgba(178,154,255,.12),transparent); margin-bottom:2.6rem; }
+@media(max-width:900px){ .hero-layout{grid-template-columns:minmax(0,1fr) minmax(240px,.72fr);gap:1.7rem}.hero-visual{min-height:360px}.portrait-image-wrap{height:285px}.chip-top{right:-.3rem}.chip-bottom{left:-.3rem} }
+@media(max-width:768px){ .hero-premium{padding-top:105px!important}.hero-layout{grid-template-columns:1fr;gap:2rem}.hero-copy{order:1}.hero-visual{order:0;min-height:300px;margin-bottom:.4rem}.portrait-frame{width:min(76%,300px)}.portrait-image-wrap{height:260px}.orbit-one{width:320px;height:320px}.orbit-two{width:370px;height:370px}.chip-top{top:8%;right:3%}.chip-bottom{bottom:8%;left:3%}.hero-name{font-size:clamp(3.7rem,15vw,5.5rem)}.hero-meta{line-height:1.8}.hero-cta{gap:.6rem} }
+@media(max-width:420px){ .portrait-frame{width:82%}.portrait-image-wrap{height:235px}.visual-chip{font-size:.47rem}.hero-case{font-size:.54rem;letter-spacing:.07em}.hero-cta .cta{font-size:.59rem;padding:.72rem .78rem}.hero-alerts{gap:.4rem}.alert-pill{font-size:.53rem} }
+
 </style>
 </head>
 <body>
@@ -649,16 +745,19 @@ footer {
     <span class="bracket">[</span>
     <span class="name">JAI_RANE</span>
     <span class="bracket">]</span>
-    <span class="role">THREAT_ANALYST</span>
+    <span class="role">CYBERSECURITY · AI</span>
   </div>
-  <ul class="nav-links">
-    <li><a href="#about">TECHNIQUE</a></li>
-    <li><a href="#experience">OPS</a></li>
-    <li><a href="#projects">ARSENAL</a></li>
-    <li><a href="#terminal">SHELL</a></li>
-    <li><a href="#contact">SIGNAL</a></li>
+  <ul class="nav-links" id="primary-nav">
+    <li><a href="#about">SKILLS</a></li>
+    <li><a href="#experience">EXPERIENCE</a></li>
+    <li><a href="#projects">PROJECTS</a></li>
+    <li><a href="#certs">CERTS</a></li>
+    <li><a href="#education">EDUCATION</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+    <li><a href="assets/Jai_Rane_CyberSecurity_Resume.pdf" download>RESUME <i class="fas fa-download"></i></a></li>
   </ul>
-  <div class="nav-ping"><div class="ping-dot"></div>BLUE_TEAM: ACTIVE</div>
+  <div class="nav-ping"><div class="ping-dot"></div>OPEN TO OPPORTUNITIES</div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav"><i class="fas fa-bars"></i></button>
 </nav>
 
 <!-- ═══════════════════════════════════════════
@@ -667,70 +766,40 @@ footer {
      yt-dlp: yt-dlp -f "bestvideo[ext=mp4][height<=1080]" "URL" -o "assets/hero-bg.mp4"
      Trim to 8-15s. Opacity controlled by CSS var below.
 ═══════════════════════════════════════════ -->
-<section class="hero " id="home" style="--vid-opacity:0.10">
-        
-  
-  
-  </div>
-
-  <div class="wrap">
-  <!-- Monster case file tag -->
-  <div class="hero-case">
-    <span class="case-id">CASE-FILE #2024-MH</span>
-    <span class="sep">|</span>
-    <span>SOC ANALYST · THREAT HUNTER · BLUE TEAM</span>
-  </div>
-
-  <h1 class="hero-name">
-    <em>JAI</em><span class="slash"> /</span><br>RANE
-  </h1>
-
-  <!-- Initial D stage call -->
-  <div class="hero-stage">
-    <span class="stage-num">STAGE 01</span>
-    B.SC COMPUTER SCIENCE · MUMBAI, MH, INDIA
-  </div>
-
-  <div class="hero-typed"><span id="tw"></span><span class="caret"></span></div>
-
-  <p class="hero-bio">
-    Specializing in Blue Team operations, threat detection automation & GenAI security engineering.
-    I turn vulnerabilities into structured action plans — proactive defense over reactive patching.
-  </p>
-
-  <!-- Initial D HUD readout strip -->
-  <div class="hero-readout">
-    <div class="readout-cell">
-      <div class="readout-val">9<sup>+</sup></div>
-      <div class="readout-key">INTERNSHIPS</div>
+<section class="hero hero-premium" id="home" style="--vid-opacity:0.06">
+  <div class="wrap hero-layout">
+    <div class="hero-copy">
+      <div class="hero-case"><span class="case-id">PROFILE-FILE #JR-2026</span><span class="sep">/</span><span>CYBERSECURITY · PYTHON · AI</span></div>
+      <div class="hero-stage"><span class="stage-num">01</span> COMPUTER SCIENCE · MUMBAI, INDIA</div>
+      <h1 class="hero-name"><em>JAI</em><span class="slash"> /</span><br>RANE</h1>
+      <div class="hero-typed"><span id="tw"></span><span class="caret"></span></div>
+      <p class="hero-bio">Computer Science student building practical skills across SOC workflows, vulnerability assessment, penetration-testing fundamentals, Python security tools, and AI-driven security applications. Interested in threat analysis, defensive operations, and security automation.</p>
+      <div class="hero-alerts">
+        <div class="alert-pill ap-blue"><div class="alert-dot d-blue"></div>THREAT ANALYSIS</div>
+        <div class="alert-pill ap-violet"><div class="alert-dot d-violet"></div>AI SECURITY</div>
+        <div class="alert-pill ap-yellow"><div class="alert-dot d-yellow"></div>VAPT PRACTICE</div>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="cta cta-solid"><i class="fas fa-arrow-down"></i> EXPLORE PROJECTS</a>
+        <a href="assets/Jai_Rane_CyberSecurity_Resume.pdf" class="cta cta-resume" download><i class="fas fa-file-arrow-down"></i> DOWNLOAD RESUME</a>
+        <a href="mailto:ranejai954@gmail.com" class="cta cta-ghost"><i class="fas fa-envelope"></i> CONTACT</a>
+      </div>
+      <div class="hero-meta"><span><i class="fas fa-graduation-cap"></i> B.Sc. Computer Science</span><span><i class="fas fa-calendar-check"></i> Expected Apr 2027</span><span><i class="fas fa-location-dot"></i> Mumbai, India</span></div>
     </div>
-    <div class="readout-cell">
-      <div class="readout-val">6<sup>+</sup></div>
-      <div class="readout-key">PROJECTS</div>
-    </div>
-    <div class="readout-cell">
-      <div class="readout-val">5<sup>+</sup></div>
-      <div class="readout-key">CERTS</div>
-    </div>
-    <div class="readout-cell">
-      <div class="readout-val">1<sup>yr</sup></div>
-      <div class="readout-key">FIELD_XP</div>
-    </div>
+    <aside class="hero-visual" aria-label="Profile photo">
+      <div class="portrait-frame">
+        <div class="portrait-topline"><span>IDENTITY / JR</span><span class="portrait-live"><i></i> PROFILE ACTIVE</span></div>
+        <div class="portrait-image-wrap">
+          <div class="portrait-fallback" id="portraitFallback" aria-hidden="true">JR<span>CYBERSECURITY · AI</span></div>
+          <img class="portrait-image" src="assets/profile.jpg" alt="Jai Rane profile photo" onerror="this.style.display='none';document.getElementById('portraitFallback').style.display='flex';">
+        </div>
+        <div class="portrait-caption"><div><strong>JAI RANE</strong><span>Cybersecurity · AI · Digital Defense</span></div><span class="portrait-mark"><i class="fas fa-shield-halved"></i></span></div>
+      </div>
+      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="visual-chip chip-top"><i class="fas fa-terminal"></i> BUILD / LEARN / DEFEND</div>
+      <div class="visual-chip chip-bottom"><span class="chip-dot"></span> OPEN TO OPPORTUNITIES</div>
+    </aside>
   </div>
-
-  <div class="hero-alerts">
-    <div class="alert-pill ap-blue"><div class="alert-dot d-blue"></div>THREAT_DETECTION: ACTIVE</div>
-    <div class="alert-pill ap-violet"><div class="alert-dot d-violet"></div>GENAI_OPS: ONLINE</div>
-    <div class="alert-pill ap-yellow"><div class="alert-dot d-yellow"></div>VAPT: CERTIFIED</div>
-    <div class="alert-pill ap-red"><div class="alert-dot d-red"></div>ALERT_LVL: CRITICAL</div>
-  </div>
-
-  <div class="hero-cta">
-    <a href="#projects" class="cta cta-solid"><i class="fas fa-terminal"></i> VIEW ARSENAL</a>
-    <a href="#terminal" class="cta cta-line-v"><i class="fas fa-code"></i> OPEN SHELL</a>
-    <a href="mailto:ranejai954@gmail.com" class="cta cta-ghost"><i class="fas fa-envelope"></i> SIGNAL ME</a>
-  </div>
-  </div><!-- /wrap -->
 </section><!-- END HERO -->
 
 <!-- ═══════════════════════════════════════════
@@ -742,8 +811,6 @@ footer {
   
   
   
-  </div>
-
   <div class="wrap">
   <div class="sec-release">
     <div class="release-bar"></div>
@@ -760,7 +827,7 @@ footer {
       <div class="acard-lead">SHIKAI FORM I</div>
       <div class="acard-name">SOC Operations</div>
       <div class="acard-rank rank-blue">RANK A · BLUE SHRINE · SIEM · THREAT INTEL</div>
-      <p class="acard-desc">SOC workflows, incident triage, log analysis, alert correlation. Elastic Stack, SIEM pipelines. Built automation cutting triage time by 40%. Hands-on Nmap, Wireshark, Burp Suite.</p>
+      <p class="acard-desc">Learning SOC workflows, security-log analysis, alert triage, and SIEM concepts. Familiar tools include Nmap, Wireshark, Burp Suite, and Elastic Stack.</p>
       <div class="rpm-wrap">
         <div class="rpm-header">
           <span class="rpm-label">SOC_OPS</span>
@@ -775,7 +842,7 @@ footer {
       <div class="acard-lead">SHIKAI FORM II</div>
       <div class="acard-name">VAPT & Ethical Hacking</div>
       <div class="acard-rank rank-violet">RANK A · OWASP TOP 10 · PENTEST · RECON</div>
-      <p class="acard-desc">Vulnerability assessment, penetration testing. SQLi, XSS, CSRF. Kali Linux, Metasploit, Burp Suite. Identified 12+ critical vulnerabilities across internship assessments.</p>
+      <p class="acard-desc">Practicing vulnerability assessment, reconnaissance, and penetration-testing fundamentals with Kali Linux, Nmap, Wireshark, Metasploit, and web-security tools.</p>
       <div class="rpm-wrap">
         <div class="rpm-header">
           <span class="rpm-label">VAPT</span>
@@ -790,7 +857,7 @@ footer {
       <div class="acard-lead">BANKAI FORM — RELEASED</div>
       <div class="acard-name">GenAI & AI Security</div>
       <div class="acard-rank rank-yellow">RANK S · LLMs · RAG · AGENTIC SYSTEMS</div>
-      <p class="acard-desc">LangChain RAG pipelines, agentic architectures, AI-driven threat detection. Currently engineering GenAI infrastructure at Lenovo LEAP via CSRBOX/BharatCares.</p>
+      <p class="acard-desc">Exploring Generative AI, retrieval-augmented generation (RAG), LangChain, and agentic-system concepts through guided learning and project work.</p>
       <div class="rpm-wrap">
         <div class="rpm-header">
           <span class="rpm-label">GEN_AI</span>
@@ -805,7 +872,7 @@ footer {
       <div class="acard-lead">SHIKAI FORM IV</div>
       <div class="acard-name">Cloud & Azure DevOps</div>
       <div class="acard-rank rank-blue">RANK B · AZURE · CI/CD · IAM</div>
-      <p class="acard-desc">Azure compute, storage, networking and security configs. CI/CD pipelines via Azure DevOps. 25% deployment time reduction, 15% infra cost cut. IBM Cloud AI integration.</p>
+      <p class="acard-desc">Exposure to cloud fundamentals, Azure services, Azure DevOps, CI/CD concepts, and IBM Cloud through learning programs and internship projects.</p>
       <div class="rpm-wrap">
         <div class="rpm-header">
           <span class="rpm-label">CLOUD_OPS</span>
@@ -820,7 +887,7 @@ footer {
       <div class="acard-lead">SHIKAI FORM V</div>
       <div class="acard-name">Python Security Tools</div>
       <div class="acard-rank rank-red">RANK A · AUTOMATION · SCRIPTING · ML</div>
-      <p class="acard-desc">Network sniffers, NIDS with ML, packet analysis. Flask + WebSocket real-time dashboards. Scapy traffic capture. Custom security automation across multiple projects.</p>
+      <p class="acard-desc">Python-based security projects involving packet capture, traffic inspection, and machine-learning concepts for network anomaly analysis.</p>
       <div class="rpm-wrap">
         <div class="rpm-header">
           <span class="rpm-label">PYTHON</span>
@@ -835,7 +902,7 @@ footer {
       <div class="acard-lead">SHIKAI FORM VI</div>
       <div class="acard-name">Data Analytics & EDA</div>
       <div class="acard-rank rank-violet">RANK B · PANDAS · VISUALIZATION · ML</div>
-      <p class="acard-desc">Data cleaning, EDA, visualization pipelines at ApexPlanet. Applied GenAI to enhance pattern detection and automated reporting. Python data stack.</p>
+      <p class="acard-desc">Python data workflows, data cleaning, exploratory data analysis, visualization, and introductory pattern-analysis techniques.</p>
       <div class="rpm-wrap">
         <div class="rpm-header">
           <span class="rpm-label">DATA_OPS</span>
@@ -857,13 +924,42 @@ footer {
     <div class="release-tag">MISSION LOG · FIELD OPERATIONS</div>
   </div>
   <h2 class="sec-heading">INTERNSHIP <span class="h-violet">RECORD</span></h2>
-  <div class="sec-case-label">CHRONOLOGICAL DEPLOYMENT HISTORY · 9 MISSIONS · MH SECTOR</div>
+  <div class="sec-case-label">SELECTED INTERNSHIP & LEARNING EXPERIENCE · MUMBAI / REMOTE</div>
   <div class="rule"></div>
 
   <div class="xp-list">
 
     <div class="xp-item">
-      <div class="xp-status xs-active">○ COMPLETED</div>
+      <div class="xp-status xs-active">● CURRENT</div>
+      <div class="xp-top">
+        <div>
+          <div class="xp-org">Tekloomy (OPC) Pvt. Ltd.</div>
+          <div class="xp-role">Cybersecurity Intern</div>
+        </div>
+        <div class="xp-period">October 2026<br>→ Present</div>
+      </div>
+      <ul class="xp-bullets">
+        <li>Developing practical cybersecurity knowledge through internship activities focused on security concepts and defensive practices.</li>
+      </ul>
+    </div>
+
+    <div class="xp-item">
+      <div class="xp-status xs-done">○ COMPLETED</div>
+      <div class="xp-top">
+        <div>
+          <div class="xp-org">ApexPlanet Software Pvt. Ltd.</div>
+          <div class="xp-role">Cybersecurity & Ethical Hacking Intern</div>
+        </div>
+        <div class="xp-period">July 2026<br>→ September 2026</div>
+      </div>
+      <ul class="xp-bullets">
+        <li>Practiced vulnerability scanning, network analysis, and penetration-testing fundamentals in a structured learning environment.</li>
+        <li>Worked with Kali Linux, Nmap, Wireshark, and Metasploit while developing security reporting and system-hardening skills.</li>
+      </ul>
+    </div>
+
+    <div class="xp-item">
+      <div class="xp-status xs-done">○ COMPLETED</div>
       <div class="xp-top">
         <div>
           <div class="xp-org">Lenovo LEAP <span style="color:var(--dim);font-size:0.85rem;font-family:var(--mono)">via CSRBOX & BharatCares</span></div>
@@ -884,10 +980,10 @@ footer {
           <div class="xp-org">IBM</div>
           <div class="xp-role">Artificial Intelligence Intern</div>
         </div>
-        <div class="xp-period">May 2026<br>→ June 2026</div>
+        <div class="xp-period">May 2026<br>→ July 2026</div>
       </div>
       <ul class="xp-bullets">
-        <li>AI development ops — ML fundamentals and model training pipelines. LLMs and diffusion models for automation.</li>
+        <li>Explored artificial-intelligence fundamentals and practical applications through guided learning and project work.</li>
       </ul>
     </div>
 
@@ -901,7 +997,7 @@ footer {
         <div class="xp-period">Mar 2026<br>→ May 2026</div>
       </div>
       <ul class="xp-bullets">
-        <li>Data cleaning, EDA, visualization. GenAI for pattern detection and automated reporting.</li>
+        <li>Worked with data cleaning, exploratory analysis, visualization, and introductory pattern-analysis workflows.</li>
       </ul>
     </div>
 
@@ -929,7 +1025,7 @@ footer {
         <div class="xp-period">Jan 2026<br>→ Feb 2026</div>
       </div>
       <ul class="xp-bullets">
-        <li>Azure compute, storage, networking. CI/CD via Azure DevOps — 25% deployment time reduction, 15% cost cut.</li>
+        <li>Explored Azure compute, storage, networking, and Azure DevOps concepts through a guided cloud-learning program.</li>
       </ul>
     </div>
 
@@ -943,8 +1039,7 @@ footer {
         <div class="xp-period">Dec 2025<br>→ Jan 2026</div>
       </div>
       <ul class="xp-bullets">
-        <li>Risk assessment, incident response, defensive security. AI + security monitoring integration.</li>
-        <li>Enhanced threat detection 20%, reduced false positives 25%.</li>
+        <li>Explored risk assessment, defensive-security concepts, incident-response workflows, and AI-assisted security use cases.</li>
       </ul>
     </div>
 
@@ -958,7 +1053,7 @@ footer {
         <div class="xp-period">Nov 2025<br>→ Feb 2026</div>
       </div>
       <ul class="xp-bullets">
-        <li>Vulnerability assessment and penetration testing. Practical threat analysis and security assessment work.</li>
+        <li>Practiced vulnerability-assessment and penetration-testing fundamentals with a focus on structured reporting.</li>
       </ul>
     </div>
 
@@ -972,7 +1067,7 @@ footer {
         <div class="xp-period">Sep 2025<br>→ Oct 2025</div>
       </div>
       <ul class="xp-bullets">
-        <li>Vulnerability scanning, log analysis, pen testing. Kali Linux, Wireshark, Nmap, Metasploit toolkit.</li>
+        <li>Practiced vulnerability scanning, network analysis, and ethical-hacking fundamentals using common security tools.</li>
       </ul>
     </div>
 
@@ -986,7 +1081,7 @@ footer {
         <div class="xp-period">Jul 2025<br>→ Aug 2025</div>
       </div>
       <ul class="xp-bullets">
-        <li>AI models into IBM Cloud — automated deployment workflows, cloud security and scalability.</li>
+        <li>Explored cloud and AI fundamentals, deployment concepts, and cloud-based application workflows.</li>
       </ul>
     </div>
 
@@ -1007,15 +1102,13 @@ footer {
   
   
   
-  </div>
-
   <div class="wrap">
   <div class="sec-release">
     <div class="release-bar"></div>
     <div class="release-tag">ZANPAKUTO TECHNIQUES · DEPLOYED TOOLS</div>
   </div>
   <h2 class="sec-heading">CODE <span class="h-blue">REPOSITORY</span></h2>
-  <div class="sec-case-label">ACTIVE DEPLOYMENTS & FIELD TOOLS · BLUE/RED TEAM DIVISION</div>
+  <div class="sec-case-label">SELECTED PROJECTS · SECURITY TOOLS · AI APPLICATIONS</div>
   <div class="rule"></div>
 
   
@@ -1026,12 +1119,34 @@ footer {
       <div class="pcard-top">
         <div class="zp-id">ZP-01</div>
         <div class="pcard-meta">
-          <div class="pcard-type">PYTHON · REAL-TIME · BLUE TEAM</div>
-          <div class="pcard-name">Network Packet Sniffer</div>
+          <div class="pcard-type">PYTHON · NLP · PHISHING DEFENSE</div>
+          <div class="pcard-name">PhishShield AI</div>
         </div>
       </div>
       <div class="pcard-body">
-        <p class="pcard-desc">Real-time traffic monitoring with live web dashboard. Captures TCP/UDP/ICMP, live stats, export JSON/CSV/TXT.</p>
+        <p class="pcard-desc">An AI-assisted phishing-analysis application designed to analyse URLs and email content using NLP and machine-learning concepts.</p>
+      </div>
+      <div class="ptags">
+        <span class="ptag pt-b">Python</span>
+        <span class="ptag pt-v">NLP</span>
+        <span class="ptag pt-y">Machine Learning</span>
+        <span class="ptag pt-r">Security</span>
+      </div>
+      <div class="pcard-foot">
+        <a href="https://github.com/ranejai954/phishshield-ai-live" target="_blank" rel="noopener noreferrer" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
+      </div>
+    </div>
+
+    <div class="pcard p-featured">
+      <div class="pcard-top">
+        <div class="zp-id">ZP-02</div>
+        <div class="pcard-meta">
+          <div class="pcard-type">PYTHON · REAL-TIME · BLUE TEAM</div>
+          <div class="pcard-name">Packet Sniffer Tool</div>
+        </div>
+      </div>
+      <div class="pcard-body">
+        <p class="pcard-desc">A Python-based packet-capture tool for inspecting network traffic and examining protocols for security analysis.</p>
         <div class="mini-term">
           <div class="mt-bar">
             <span style="background:#ff5f56"></span>
@@ -1051,21 +1166,21 @@ footer {
         <span class="ptag pt-y">Real-time</span>
       </div>
       <div class="pcard-foot">
-        <a href="https://github.com/ranejai954/packet-sniffer" target="_blank" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
-        <a href="https://ranejai954.github.io/packet-sniffer" target="_blank" class="pbtn pb-violet"><i class="fas fa-external-link-alt"></i> LIVE DEMO</a>
+        <a href="https://github.com/ranejai954/packet-sniffer" target="_blank" rel="noopener noreferrer" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
+        <a href="https://ranejai954.github.io/packet-sniffer" target="_blank" rel="noopener noreferrer" class="pbtn pb-violet"><i class="fas fa-external-link-alt"></i> LIVE DEMO</a>
       </div>
     </div>
 
     <div class="pcard">
       <div class="pcard-top">
-        <div class="zp-id">ZP-02</div>
+        <div class="zp-id">ZP-03</div>
         <div class="pcard-meta">
           <div class="pcard-type">AI · ML · INTRUSION DETECTION</div>
-          <div class="pcard-name">VOIS AI Intrusion Detection</div>
+          <div class="pcard-name">Network Intrusion Detection System</div>
         </div>
       </div>
       <div class="pcard-body">
-        <p class="pcard-desc">GenAI + blue-team monitoring. AI-powered NIDS deployed on HuggingFace. 94% detection accuracy on network traffic classification.</p>
+        <p class="pcard-desc">A machine-learning-based project for analysing network activity and identifying potentially anomalous traffic patterns.</p>
       </div>
       <div class="ptags">
         <span class="ptag pt-v">GenAI</span>
@@ -1074,14 +1189,32 @@ footer {
         <span class="ptag pt-r">Security</span>
       </div>
       <div class="pcard-foot">
-        <a href="https://github.com/ranejai954/vois-cybersecurity-genai-internship" target="_blank" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
-        <a href="https://huggingface.co/spaces/jairane86/ai-network-intrusion-detection" target="_blank" class="pbtn pb-violet"><i class="fas fa-external-link-alt"></i> DEMO</a>
+        <a href="https://github.com/ranejai954/vois-cybersecurity-genai-internship" target="_blank" rel="noopener noreferrer" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
+        <a href="https://huggingface.co/spaces/jairane86/ai-network-intrusion-detection" target="_blank" rel="noopener noreferrer" class="pbtn pb-violet"><i class="fas fa-external-link-alt"></i> DEMO</a>
       </div>
     </div>
 
     <div class="pcard">
       <div class="pcard-top">
-        <div class="zp-id">ZP-03</div>
+        <div class="zp-id">ZP-04</div>
+        <div class="pcard-meta">
+          <div class="pcard-type">PYTHON · ELASTIC STACK · SIEM</div>
+          <div class="pcard-name">SOC Automation Lab</div>
+        </div>
+      </div>
+      <div class="pcard-body">
+        <p class="pcard-desc">A learning lab exploring security-log analysis, alert triage, and Python-based automation workflows for SOC monitoring and incident analysis.</p>
+      </div>
+      <div class="ptags">
+        <span class="ptag pt-b">Python</span>
+        <span class="ptag pt-v">SIEM</span>
+        <span class="ptag pt-y">Log Analysis</span>
+      </div>
+    </div>
+
+    <div class="pcard">
+      <div class="pcard-top">
+        <div class="zp-id">ZP-05</div>
         <div class="pcard-meta">
           <div class="pcard-type">BLUE TEAM · VAPT · ANALYSIS LOG</div>
           <div class="pcard-name">VOIS Cybersecurity Log</div>
@@ -1095,13 +1228,13 @@ footer {
         <span class="ptag pt-v">VAPT</span>
       </div>
       <div class="pcard-foot">
-        <a href="https://github.com/ranejai954/vois-cybersecurity-internship-march2026" target="_blank" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
+        <a href="https://github.com/ranejai954/vois-cybersecurity-internship-march2026" target="_blank" rel="noopener noreferrer" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
       </div>
     </div>
 
     <div class="pcard">
       <div class="pcard-top">
-        <div class="zp-id">ZP-04</div>
+        <div class="zp-id">ZP-06</div>
         <div class="pcard-meta">
           <div class="pcard-type">ETHICAL HACKING · RECON · VAPT</div>
           <div class="pcard-name">ApexPlanet VAPT Logs</div>
@@ -1116,13 +1249,13 @@ footer {
         <span class="ptag pt-b">Nmap</span>
       </div>
       <div class="pcard-foot">
-        <a href="https://github.com/ranejai954/apexplanet-cybersecurity-internship" target="_blank" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
+        <a href="https://github.com/ranejai954/apexplanet-cybersecurity-internship" target="_blank" rel="noopener noreferrer" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
       </div>
     </div>
 
     <div class="pcard">
       <div class="pcard-top">
-        <div class="zp-id">ZP-05</div>
+        <div class="zp-id">ZP-07</div>
         <div class="pcard-meta">
           <div class="pcard-type">RECON · NETWORK · SCANNING</div>
           <div class="pcard-name">Vulnerability Scanning Hub</div>
@@ -1136,13 +1269,13 @@ footer {
         <span class="ptag pt-y">Recon</span>
       </div>
       <div class="pcard-foot">
-        <a href="https://github.com/ranejai954/vulenarability_scanning_nmap" target="_blank" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
+        <a href="https://github.com/ranejai954/vulenarability_scanning_nmap" target="_blank" rel="noopener noreferrer" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
       </div>
     </div>
 
     <div class="pcard">
       <div class="pcard-top">
-        <div class="zp-id">ZP-06</div>
+        <div class="zp-id">ZP-08</div>
         <div class="pcard-meta">
           <div class="pcard-type">PYTHON · CRYPTOGRAPHY · TOOL</div>
           <div class="pcard-name">Caesar Cipher Script</div>
@@ -1156,7 +1289,7 @@ footer {
         <span class="ptag pt-v">Cryptography</span>
       </div>
       <div class="pcard-foot">
-        <a href="https://github.com/ranejai954/ceaser-cypher-source-script" target="_blank" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
+        <a href="https://github.com/ranejai954/ceaser-cypher-source-script" target="_blank" rel="noopener noreferrer" class="pbtn pb-blue"><i class="fab fa-github"></i> SOURCE</a>
       </div>
     </div>
 
@@ -1210,7 +1343,7 @@ footer {
     <div class="release-tag">SEALED TECHNIQUES · VERIFIED CAPABILITY</div>
   </div>
   <h2 class="sec-heading">CERTIFICATION <span class="h-blue">ARCHIVE</span></h2>
-  <div class="sec-case-label">ISSUED CLEARANCES · SKILLS VERIFIED · FIELD VALIDATED</div>
+  <div class="sec-case-label">CERTIFICATIONS & LEARNING RECORD</div>
   <div class="rule"></div>
 
   <div class="cert-grid">
@@ -1234,15 +1367,15 @@ footer {
     </div>
     <div class="cert-card">
       <div class="cert-stamp">CLEARANCE FILE #CL-001</div>
-      <div class="cert-name">Cloud Trust & Security</div>
+      <div class="cert-name">Trust and Security with Google Cloud</div>
       <div class="cert-by">Google Cloud</div>
       <div class="cert-domain">CLOUD · SECURITY FOUNDATIONS</div>
     </div>
     <div class="cert-card">
       <div class="cert-stamp">CLEARANCE FILE #CY-003</div>
-      <div class="cert-name">Cybersecurity with Ethical Hacking</div>
-      <div class="cert-by">IBM SkillsBuild</div>
-      <div class="cert-domain">VAPT · ETHICAL HACKING</div>
+      <div class="cert-name">Introduction to Cybersecurity</div>
+      <div class="cert-by">Cisco Networking Academy</div>
+      <div class="cert-domain">CYBERSECURITY · FOUNDATIONS</div>
     </div>
   </div>
 </div><!-- /wrap -->
@@ -1256,13 +1389,13 @@ footer {
     <div class="release-tag">ACADEMIC ORIGIN · BASE TRAINING</div>
   </div>
   <h2 class="sec-heading">EDUCATION <span class="h-violet">FILE</span></h2>
-  <div class="sec-case-label">FORMAL TRAINING RECORD · KERALEEYA SAMAJAM COLLEGE · MUMBAI</div>
+  <div class="sec-case-label">B.SC. COMPUTER SCIENCE · EXPECTED APRIL 2027</div>
   <div class="rule"></div>
   <div class="edu-block">
     <div class="edu-deg">B.Sc. Computer Science</div>
     <div class="edu-inst">Keraleeya Samajam's Model College, Mumbai</div>
-    <div class="edu-yr">2024 – 2027 (Expected)</div>
-    <div class="edu-rel">Coursework: Cybersecurity · Network Security · Cryptography · Operating Systems · DBMS</div>
+    <div class="edu-yr">July 2024 – April 2027 (Expected)</div>
+    <div class="edu-rel">Coursework: Cybersecurity Fundamentals · Network Security · Operating Systems · Cryptography · Database Management</div>
   </div>
 </div><!-- /wrap -->
 </section>
@@ -1283,7 +1416,7 @@ footer {
       <!-- Monster — cold case style -->
       <div class="cold-file">CASE NOTES · OPEN FOR OPPORTUNITIES</div>
       <div class="cold-quote">"Let's connect if you're building security teams that value proactive defense."</div>
-      <p class="cold-body">Available for SOC analyst roles, cybersecurity internships, GenAI security research, and collaborative tool development. Based in Mumbai — open to remote.</p>
+      <p class="cold-body">Seeking SOC Analyst, Cybersecurity Analyst, or Ethical Hacking opportunities. Interested in security projects, threat analysis, and practical defensive tooling. Based in Mumbai, India.</p>
     </div>
     <div class="contact-nodes">
       <a href="mailto:ranejai954@gmail.com" class="cnode">
@@ -1291,15 +1424,20 @@ footer {
         <span class="cnode-label">EMAIL</span>
         <span class="cnode-val">ranejai954@gmail.com</span>
       </a>
-      <a href="https://www.linkedin.com/in/jai-rane-62ba58352" target="_blank" class="cnode">
+      <a href="https://www.linkedin.com/in/jai-rane-62ba58352" target="_blank" rel="noopener noreferrer" class="cnode">
         <i class="fab fa-linkedin cnode-icon"></i>
         <span class="cnode-label">LINKEDIN</span>
         <span class="cnode-val">jai-rane-62ba58352</span>
       </a>
-      <a href="https://github.com/ranejai954" target="_blank" class="cnode">
+      <a href="https://github.com/ranejai954" target="_blank" rel="noopener noreferrer" class="cnode">
         <i class="fab fa-github cnode-icon"></i>
         <span class="cnode-label">GITHUB</span>
         <span class="cnode-val">ranejai954</span>
+      </a>
+      <a href="tel:+918823034326" class="cnode">
+        <i class="fas fa-phone cnode-icon"></i>
+        <span class="cnode-label">PHONE</span>
+        <span class="cnode-val">+91 88230 34326</span>
       </a>
     </div>
   </div>
@@ -1307,10 +1445,29 @@ footer {
 </section>
 
 <footer>
-  <p>© 2026 JAI RANE · MUMBAI, MH · BLUE TEAM ANALYST · 守る者</p>
+  <p>© 2026 JAI RANE · MUMBAI, INDIA · CYBERSECURITY & AI · 守る者</p>
 </footer>
 
 <script>
+/* ── MOBILE NAVIGATION ── */
+(function(){
+  const btn=document.getElementById('mobileMenuBtn');
+  const nav=document.getElementById('primary-nav');
+  if(!btn||!nav)return;
+  btn.addEventListener('click',()=>{
+    const open=nav.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded',String(open));
+    btn.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');
+    btn.innerHTML=open?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';
+  });
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    nav.classList.remove('is-open');
+    btn.setAttribute('aria-expanded','false');
+    btn.setAttribute('aria-label','Open navigation menu');
+    btn.innerHTML='<i class="fas fa-bars"></i>';
+  }));
+})();
+
 /* ── CANVAS — optimised, no O(n²) connections ── */
 (function(){
   const c = document.getElementById('bgc');
@@ -1380,7 +1537,7 @@ footer {
 
 /* ── TYPEWRITER ── */
 (function(){
-  const strings=['SOC Analyst. Threat Hunter.','Blue Team Operations Specialist.','GenAI Security Engineer.','Turning vulns into action plans.'];
+  const strings=['Cybersecurity learner. Python builder.','SOC workflows & threat analysis.','AI-assisted security projects.','Building practical defensive tools.'];
   let si=0,ci=0,del=false;
   const el=document.getElementById('tw');
   function tick(){
@@ -1471,38 +1628,42 @@ footer {
     whoami:()=>[
       ['tv','─── IDENTITY DOSSIER ────────────────────────────'],
       ['td','  Name      : Jai Rane'],
-      ['td','  Role      : SOC Analyst · Threat Hunter · GenAI Engineer'],
+      ['td','  Role      : Cybersecurity Learner · Python · AI-driven Security'],
       ['td','  Location  : Mumbai, Maharashtra, India'],
       ['td','  Degree    : B.Sc. Computer Science (2024–2027)'],
       ['td','  Focus     : Blue Team · VAPT · AI Security Engineering'],
-      ['ty','  Status    : Open to SOC / Security / GenAI roles'],
+      ['ty','  Status    : Seeking SOC / Cybersecurity / Ethical Hacking opportunities'],
       ['null',''],
     ],
     skills:()=>[
       ['tv','─── TECHNICAL REIATSU ───────────────────────────'],
-      ['tp','  [ RANK A · 84 RPM ]  SOC Ops · SIEM · Incident Response'],
-      ['tp','  [ RANK A · 83 RPM ]  Python · Automation · Network Tools'],
-      ['tp','  [ RANK S · 81 RPM ]  GenAI · LangChain · Agentic Systems'],
-      ['tp','  [ RANK A · 79 RPM ]  VAPT · Ethical Hacking · OWASP'],
-      ['tp','  [ RANK B · 76 RPM ]  Azure · CI/CD · Cloud Security'],
-      ['tp','  [ RANK B · 72 RPM ]  Data Analytics · EDA · Visualization'],
+      ['tp','  [ FOCUS ]  SOC workflows · SIEM · Log Analysis'],
+      ['tp','  [ FOCUS ]  Python · Packet Analysis · Security Tools'],
+      ['tp','  [ FOCUS ]  GenAI · RAG · LangChain fundamentals'],
+      ['tp','  [ FOCUS ]  VAPT fundamentals · Recon · Web Security'],
+      ['tp','  [ FOCUS ]  Azure · IBM Cloud · CI/CD concepts'],
+      ['tp','  [ FOCUS ]  Data Analysis · EDA · Visualization'],
       ['td','  Tools: Nmap · Wireshark · Burp Suite · Metasploit · Kali'],
       ['null',''],
     ],
     projects:()=>[
       ['tv','─── CODE REPOSITORY ─────────────────────────────'],
-      ['tg','  [ZP-01] Packet Sniffer      → github.com/ranejai954/packet-sniffer'],
-      ['tg','  [ZP-02] AI Intrusion Det.   → huggingface.co/spaces/jairane86/...'],
-      ['tp','  [ZP-03] VOIS Cyber Log      → github.com/ranejai954/vois-cyber...'],
-      ['tp','  [ZP-04] ApexPlanet VAPT     → github.com/ranejai954/apexplanet...'],
-      ['tp','  [ZP-05] Vuln Scanning Hub   → github.com/ranejai954/vulenarabi...'],
-      ['tp','  [ZP-06] Caesar Cipher       → github.com/ranejai954/ceaser-cyp...'],
+      ['tg','  [ZP-01] PhishShield AI      → github.com/ranejai954/phishshield-ai-live'],
+      ['tg','  [ZP-02] Packet Sniffer      → github.com/ranejai954/packet-sniffer'],
+      ['tg','  [ZP-03] Network IDS         → Hugging Face demo / VOIS project repo'],
+      ['tp','  [ZP-04] SOC Automation Lab → SIEM · log analysis · Python'],
+      ['tp','  [ZP-05] VOIS Cyber Log     → github.com/ranejai954/vois-cyber...'],
+      ['tp','  [ZP-06] ApexPlanet VAPT    → github.com/ranejai954/apexplanet...'],
+      ['tp','  [ZP-07] Vuln Scanning Hub  → github.com/ranejai954/vulenarabi...'],
+      ['tp','  [ZP-08] Caesar Cipher      → github.com/ranejai954/ceaser-cyp...'],
       ['null',''],
     ],
     missions:()=>[
       ['tv','─── DEPLOYMENT HISTORY ──────────────────────────'],
-      ['tg','  ► Lenovo LEAP    GenAI & Agentic Eng.       [ACTIVE]'],
-      ['tg','  ► IBM            AI Intern                  [ACTIVE]'],
+      ['tg','  ► Tekloomy       Cybersecurity Intern         [CURRENT]'],
+      ['tg','  ► ApexPlanet     Cybersecurity & Ethical Hacking'],
+      ['td','  ✓ Lenovo LEAP    GenAI & Agentic Systems Eng.'],
+      ['td','  ✓ IBM            Artificial Intelligence Intern'],
       ['td','  ✓ ApexPlanet     Data Analyst Intern'],
       ['td','  ✓ VOIS           Cybersecurity Intern'],
       ['td','  ✓ Microsoft      Azure Intern'],
